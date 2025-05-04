@@ -1,0 +1,164 @@
+﻿
+
+/*MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL*/
+
+
+
+/* Modal content box */
+.modal-content {
+    display: none;
+    /*either display as block or none*/
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    min-width: 400px;
+    width: 20%;
+    height: 90%;
+    overflow: auto;
+    text-align: center;
+    
+}
+
+.modal-edit-display{
+    display: block;
+}
+
+
+.h3-start {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .6rem;
+    margin-bottom: 1rem;
+    input
+        {
+            padding: 1rem;
+            border-radius: 14px;
+            border: solid 1px #ccc;
+            width: 100%;
+        }
+}
+.inputGroup {
+    label{
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+}
+
+
+#editor-edit {
+    display: block;
+    width: 100%; /* Ensures all elements take up the full row */
+    padding: 8px; /* Adds some spacing for better appearance */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    border: solid 1px #ccc;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.mb-8 {
+    margin-bottom: 8rem;
+}
+
+.date-style {
+    width: 45%;
+}
+/* Close button */
+.close-edit {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #333;
+    border: none;
+    background-color: transparent;
+    : hover
+
+{
+    color: red;
+}
+
+}
+
+#editor-wrapper .ql-toolbar {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid #ccc;
+    border-bottom: solid 1px #ccc;
+}
+
+#editor-wrapper .ql-container {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #ccc;
+    border-top: none; /* remove double border with toolbar */
+    overflow: hidden;
+}
+
+
+/*lägg till i JAVASCRIPT*/
+
+/*document.querySelector(".add-project").addEventListener("click", function() {
+    document.getElementById("projectModal").style.display = "flex";
+});
+
+document.querySelector(".close").addEventListener("click", function() {
+    document.getElementById("projectModal").style.display = "none";
+});
+
+// Close modal when clicking outside of it
+window.addEventListener("click", function(event) {
+    let modal = document.getElementById("projectModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+*/
+
+.modal-content {
+    border-radius: 8px;
+    overflow: auto;
+}
+
+    /* Scrollbar styles */
+    .modal-content::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 14px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 14px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 8px;
+    }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+
+
+.btn-style {
+    border-radius: 14px;
+    padding: 1rem;
+    width: 100%;
+    border: solid 1px #ccc;
+    background-color: #2D99FF;
+    color: white;
+}

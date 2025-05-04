@@ -1,0 +1,157 @@
+﻿
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+
+}
+
+.header{
+    grid-column: 1/4;
+    display:flex;
+    justify-content:space-between;
+    padding:1rem;
+}
+
+.add-project {
+    padding: .4rem 2rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius:.5rem;
+    color: #fff;
+}
+
+.status {
+    display:flex;
+    grid-column: 1/4;
+    grid-row: 2/3;
+    gap:2rem;
+    margin: 0rem 2rem;
+    padding-bottom: .5rem;
+    border-bottom: solid 1px #ccc;
+    
+    a{
+            color: #808080cc;
+            font-weight:700;
+            text-decoration: none;
+            font-size: 15px;
+            
+        }
+}
+
+.status a.selected {
+    color: var(--primary-color);
+    /*lägg till någt liknande som detta sedan i javascript*/
+    /*document.querySelectorAll(".status a").forEach(link => {
+    link.addEventListener("click", function() {
+        // Remove "selected" from all links
+        document.querySelectorAll(".status a").forEach(el => el.classList.remove("selected"));
+        // Add "selected" to the clicked link
+        this.classList.add("selected");
+    });
+});*/
+}
+
+
+
+.project-cards {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Automatically adjust columns */    gap:1rem;
+    margin: 1rem;
+}
+
+.project-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius:14px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    height: 250px;
+    
+}
+
+.project-card-heading{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:1rem;
+    
+}
+
+.logo-title-company{
+    display:flex;
+    gap: 1rem;
+}
+
+.txt-align{
+    text-align:start;
+}
+.card-logo{
+    width:3rem;
+    height:3rem;
+    text-align:center;
+}
+
+.px-05{
+    padding:0rem .5rem;
+}
+
+.mb-05{
+    margin-bottom: 1rem;
+}
+
+.project-options-btn{
+    border:none;
+    background-color: transparent;
+    display:flex;
+    align-items:flex-start;
+    cursor: pointer;
+    
+
+          
+}
+.hidden {
+    display: none;
+}
+.drop-down{
+    /*display: none;*/
+/*flex eller none*/
+    flex-direction: column;
+    padding: 1rem;
+    gap: 6px;
+    width: 70%;
+    
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px #ccc;
+
+
+    button{
+              background-color: #fff;
+              border: none;
+              border-radius: 14px;
+              display:flex;
+              align-items:center;
+              justify-self:center;
+              gap: 1rem;
+              text-align: center;
+              padding:.5rem;
+              width:90%;
+          }
+
+    button:hover {
+              background-color: #F5F7FA;
+          }
+}
+
+.dropdown-divider{
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: .5rem 0;
+}

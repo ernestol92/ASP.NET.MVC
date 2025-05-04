@@ -1,0 +1,68 @@
+﻿@model WorkSpaceViewModel
+
+<div class="modal-content js-add-modal">
+    <button class="close">&times;</button>
+    <h3 class="h3-start">Add Project</h3>
+
+    <img src="~/Images/ALogoProjectsLarge.svg" alt="Alternate Text" />
+
+    <form method="post" asp-controller="Home" asp-action="WorkSpace" id="add-form">
+        <div class="inputGroup">
+            <label asp-for="AddProject.ProjectName"></label>
+            <input asp-for="AddProject.ProjectName">
+            <span asp-validation-for="AddProject.ProjectName"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="AddProject.ClientName"></label>
+            <input asp-for="AddProject.ClientName">
+            <span asp-validation-for="AddProject.ClientName"></span>
+        </div>
+
+        <div class="mb-2">
+            <label class="editor-label" asp-for="AddProject.ProjectDescription"></label>
+            <div id="editor-wrapper">
+                <div id="toolbar">
+                    <span class="ql-formats">
+                        <button class="ql-header" value="1">H1</button>
+                        <button class="ql-header" value="2">H2</button>
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-link"></button>
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button>
+                    </span>
+                </div>
+                <div id="editor-add"></div>
+            </div>
+            <input asp-for="AddProject.ProjectDescription" type="hidden" id="hidden-input-add">
+            <span asp-validation-for="AddProject.ProjectDescription"></span>
+        </div>
+
+        <div class="flex-row space-between">
+            <div class="date-style inputGroup">
+                <label asp-for="AddProject.StartDate" class="flex-start"></label>
+                <input asp-for="AddProject.StartDate" class="date-style" />
+                <span asp-validation-for="AddProject.StartDate"></span>
+            </div>
+
+            <div class="date-style inputGroup">
+                <label asp-for="AddProject.EndDate" class="flex-start"></label>
+                <input asp-for="AddProject.EndDate" class="date-style" />
+                <span asp-validation-for="AddProject.EndDate"></span>
+            </div>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="AddProject.Budget" class="flex-start"></label>
+            <input asp-for="AddProject.Budget" class="mb-8" type="text"/>
+            <span asp-validation-for="AddProject.Budget"></span>
+        </div>
+        
+
+        <button id="btn-create-project" class="btn-style" type="submit">Create</button>
+
+    </form>
+</div>
+

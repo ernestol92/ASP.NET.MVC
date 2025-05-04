@@ -1,0 +1,67 @@
+﻿@model WorkSpaceViewModel
+
+<div class="modal-content js-edit-modal">
+    <button class="close-edit">&times;</button>
+    <h3 class="h3-start">Edit Project</h3>
+
+    <img src="~/Images/ALogoProjectsLarge.svg" alt="Alternate Text" />
+
+    <form method="post" asp-controller="Home" asp-action="EditProject" id="edit-form">
+        <div class="inputGroup">
+            <label asp-for="EditProject.ProjectName"></label>
+            <input asp-for="EditProject.ProjectName">
+            <span asp-validation-for="EditProject.ProjectName"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="EditProject.ClientName"></label>
+            <input asp-for="EditProject.ClientName">
+            <span asp-validation-for="EditProject.ClientName"></span>
+        </div>
+
+        <div class="mb-2">
+            <label class="editor-label" asp-for="EditProject.ProjectDescription"></label>
+            <div id="editor-wrapper">
+                <div id="toolbar-edit">
+                    <span class="ql-formats">
+                        <button class="ql-header" value="1">H1</button>
+                        <button class="ql-header" value="2">H2</button>
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-link"></button>
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button>
+                    </span>
+                </div>
+                <div id="editor-edit"></div>
+            </div>
+            <input asp-for="EditProject.ProjectDescription" type="hidden" id="hidden-input-edit">
+            <span asp-validation-for="EditProject.ProjectDescription"></span>
+        </div>
+
+        <div class="flex-row space-between">
+            <div class="date-style inputGroup">
+                <label asp-for="EditProject.StartDate" class="flex-start"></label>
+                <input asp-for="EditProject.StartDate" class="date-style"/>
+                <span asp-validation-for="EditProject.StartDate"></span>
+            </div>
+
+            <div class="date-style inputGroup">
+                <label asp-for="EditProject.EndDate" class="flex-start"></label>
+                <input asp-for="EditProject.EndDate" class="date-style"/>
+                <span asp-validation-for="EditProject.EndDate"></span>
+            </div>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="EditProject.Budget" class="flex-start">Budget</label>
+            <input asp-for="EditProject.Budget" class="mb-8" type="text"/>
+            <span asp-validation-for="EditProject.Budget"></span>
+        </div>
+
+        <button id="btn-change-project" class="btn-style" type="submit">Change</button>
+
+
+    </form>
+</div>

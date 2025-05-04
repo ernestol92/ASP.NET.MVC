@@ -1,0 +1,68 @@
+﻿.topbar-container {
+    display: flex;
+    border-bottom: solid 1px #ccc;
+    background-color: #F1F3F7;
+    height:4rem;
+}
+
+i.fas, i.far, i.fab, i.fa-solid {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+
+.search-container {
+    position: relative;
+    width: 100%;
+    background-color: #F1F3F7;
+    display:flex;
+
+        
+        input{
+                padding: 8px 8px 8px 40px;
+                width: 70%;
+                border: none;
+                border-radius: 14px;
+                margin: 0rem 2rem;
+                background-color: #F1F3F7;
+        }
+
+        input:focus {
+                outline: none;
+                border-color: #aaa; /* Optional, makes it a bit darker */
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); /* Soft subtle glow */
+                transition: box-shadow 0.2s ease-in-out;
+        }
+
+        i
+            {
+                position:absolute;
+                transform: translateY(-50%);
+                top:50%;
+                left:48px;
+        }
+}
+
+.btn-box{
+    display:flex;
+}
+
+.bell-btn {
+    background-color: transparent;
+    border: none;
+    padding:.8rem;
+}
+
+.cog-btn {
+    background-color: transparent;
+    border: none;
+    padding: .8rem;
+    border-right: solid 1px #ccc;
+}
+
+.user-btn {
+    background-color: transparent;
+    border: none;
+    padding: .8rem;
+}
+    

@@ -1,0 +1,43 @@
+﻿@model SignUpModel
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form class="items">
+
+	<h1 class="CreateAcc"> Create Account </h1>
+
+	<div class="inputPairs">
+		<label asp-for="FullName">Full Name</label>
+		<input asp-for="FullName" type="text" name="name" value=""/>
+		<span asp-validation-for="FullName"></span>
+	</div>
+
+	<div class="inputPairs">
+		<label asp-for="Email" >Email</label>
+		<input asp-for="Email" type="email" name="name" value=""/>
+		<span asp-validation-for="Email"></span>
+	</div>
+
+	<div class="inputPairs">
+		<label asp-for="Password" >Password</label>
+		<input asp-for="Password" type="password" name="name" value=""/>
+	</div>
+
+	<div class="inputPairs">
+		<label asp-for="ConfirmPassword">Confirm Password</label>
+		<input asp-for="ConfirmPassword" type="password" name="name" value=""/>
+	</div>
+
+	<div class="checkboxPair">
+		<input asp-for="TermsConditions" class="checkbox" type="checkbox" name="name" value="" required />
+		<label asp-for="TermsConditions"> I accept <a class="textDeco" href="#">Terms and Conditions</a> </label>
+	</div>
+
+	<button type="submit" class="btn"> Create Account</button>
+
+	<div>
+		<label>Already have an account? <a class="textDeco" href="#">Login</a> </label>
+	</div>
+
+</form>

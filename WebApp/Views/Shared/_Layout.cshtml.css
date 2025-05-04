@@ -1,0 +1,9 @@
+﻿.containerAuth {
+    align-self: center;
+    justify-self: center;
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    width: 500px;
+    text-align: center;
+}

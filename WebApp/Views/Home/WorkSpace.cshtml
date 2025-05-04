@@ -1,0 +1,105 @@
+﻿@model WorkSpaceViewModel
+@{
+	Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+@section Modals {
+	<div >
+		@await Html.PartialAsync("~/Views/Shared/Partials/WorkSpacePartials/_ModalAddProject.cshtml", Model)
+		@await Html.PartialAsync("~/Views/Shared/Partials/WorkSpacePartials/_ModalEditProject.cshtml", Model)
+
+	</div>
+}
+<div class="grid">
+	<div class="header">
+		<h2>Projects</h2>
+		<button class="add-project">+ Add Project</button>
+	</div>
+	
+	<div class="status">
+		<a href="#">ALL [0]</a>
+		<a href="#">STARTED [0]</a>
+		<a href="#">COMPLETED [0]</a>
+	</div>
+	
+
+	<div class="project-cards">
+		
+		<div class="project-card position-relative">
+			<div class="project-card-heading">
+				<div class="logo-title-company">
+					<img src="~/Images/ALogoProjects.svg" alt="Apha standard project logo" />
+					<div class="project-card-heading-text">
+						<h6 class="txt-align">Project-title</h6>
+						<p class="txt-align"> Sublimax AB </p>
+					</div>
+
+				</div>
+				<button class="mb-05 px-05 project-options-btn">
+					<i class="fas fa-ellipsis"></i>
+					
+				</button>
+
+				<div class="drop-down hidden">
+					<button class="js-edit-btn"><i class="fa-solid fa-pen" style="color: #74C0FC;"></i> Edit </button>
+					<hr class="dropdown-divider"/>
+					<button><i class="fa-solid fa-trash" style="color: #fe4343;"></i>Delete Project</button>
+				</div>
+			</div>
+
+			<p> It is necessary to develop a website redesign in a corporate style. </p>
+		</div>
+
+		<div class="project-card position-relative">
+			<div class="project-card-heading">
+				<div class="logo-title-company">
+					<img src="~/Images/ALogoProjects.svg" alt="Apha standard project logo" />
+					<div class="project-card-heading-text">
+						<h6 class="txt-align">Project-title</h6>
+						<p class="txt-align"> Sublimax AB </p>
+					</div>
+
+				</div>
+				<button class="mb-05 px-05 project-options-btn">
+					<i class="fas fa-ellipsis"></i>
+
+				</button>
+
+				<div class="drop-down hidden">
+					<button><i class="fa-solid fa-pen" style="color: #74C0FC;"></i> Edit </button>
+					<hr class="dropdown-divider" />
+					<button><i class="fa-solid fa-trash" style="color: #fe4343;"></i>Delete Project</button>
+				</div>
+			</div>
+
+			<p> It is necessary to develop a website redesign in a corporate style. </p>
+		</div>
+
+		
+	</div>
+	
+</div>
+
+
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+	@if (Model.ShowAddModal)
+	{
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				document.querySelector(".modal").classList.add("modal-background-flex");
+				document.querySelector(".js-add-modal").classList.add("modal-add-display");
+			});
+		</script>
+	}
+	@if(Model.ShowEditModal)
+	{
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				document.querySelector(".modal").classList.add("modal-background-flex");
+				document.querySelector(".js-edit-modal").classList.add("modal-edit-display");
+			});
+		</script>
+	}
+}
