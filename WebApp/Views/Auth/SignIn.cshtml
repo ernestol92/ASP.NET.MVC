@@ -1,24 +1,28 @@
-﻿@{
+﻿@model SignInModel
+
+@{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="items">
+<form class="items" method="post">
 	
 	<h1 class="CreateAcc"> Login </h1>
 
 	<div class="inputPairs">
-		<small> Email </small>
-		<input type="email" placeholder="Your email address" />
+		<label asp-for="Email"></label>
+		<input asp-for="Email" type="email"/>
+		<span asp-validation-for="Email"></span>
 	</div>
 
 	<div class="inputPairs">
-		<small> Password </small>
-		<input type="password" placeholder="Your password" />
+		<label asp-for="Password"></label>
+		<input asp-for="Password" type="password"/>
+		<span asp-validation-for="Password"></span>
 	</div>
 
 	<div class="checkboxPair">
-		<input type="checkbox" name="name" value="" />
-		<small> Remember Me </small>
+		<input asp-for="RememberMe" type="checkbox" name="name" value="" />
+		<label asp-for="RememberMe"></label>
 	</div>
 	
 
@@ -26,6 +30,12 @@
 
 
 	<div>
-		<small>Dont have an account? <a class="textDeco" href="#">Sign Up</a> </small>
+		<label>Dont have an account? <a class="textDeco" href="#">Sign Up</a> </label>
 	</div>
-</div>
+</form>
+
+
+
+@section Scripts {
+	<script src="~/js/formvalidation.js"></script>
+}

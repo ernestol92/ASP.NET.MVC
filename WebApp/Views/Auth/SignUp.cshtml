@@ -3,35 +3,40 @@
 @{
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<form class="items">
+<form class="items" method="post">
 
 	<h1 class="CreateAcc"> Create Account </h1>
 
 	<div class="inputPairs">
-		<label asp-for="FullName">Full Name</label>
-		<input asp-for="FullName" type="text" name="name" value=""/>
+		<label asp-for="FullName"></label>
+		<input asp-for="FullName"/>
 		<span asp-validation-for="FullName"></span>
 	</div>
 
 	<div class="inputPairs">
-		<label asp-for="Email" >Email</label>
-		<input asp-for="Email" type="email" name="name" value=""/>
+		<label asp-for="Email"></label>
+		<input asp-for="Email"/>
 		<span asp-validation-for="Email"></span>
 	</div>
 
 	<div class="inputPairs">
-		<label asp-for="Password" >Password</label>
-		<input asp-for="Password" type="password" name="name" value=""/>
+		<label asp-for="Password"></label>
+		<input asp-for="Password"/>
+		<span asp-validation-for="Password"></span>
 	</div>
 
 	<div class="inputPairs">
-		<label asp-for="ConfirmPassword">Confirm Password</label>
-		<input asp-for="ConfirmPassword" type="password" name="name" value=""/>
+		<label asp-for="ConfirmPassword"></label>
+		<input asp-for="ConfirmPassword"/>
+		<span asp-validation-for="ConfirmPassword"></span>
 	</div>
 
-	<div class="checkboxPair">
-		<input asp-for="TermsConditions" class="checkbox" type="checkbox" name="name" value="" required />
+	<div class="checkboxGroup">
+		<div class="checkboxPair">
 		<label asp-for="TermsConditions"> I accept <a class="textDeco" href="#">Terms and Conditions</a> </label>
+		<input asp-for="TermsConditions" type="checkbox"/>
+		</div>
+		<span asp-validation-for="TermsConditions"></span>
 	</div>
 
 	<button type="submit" class="btn"> Create Account</button>
@@ -41,3 +46,7 @@
 	</div>
 
 </form>
+
+@section Scripts {
+	<script src="~/js/formvalidation.js"></script>
+}

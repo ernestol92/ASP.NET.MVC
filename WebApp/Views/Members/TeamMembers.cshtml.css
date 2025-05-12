@@ -1,0 +1,82 @@
+﻿
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+}
+
+.header {
+    grid-column: 1/4;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.add-member {
+    padding: .4rem 2rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: .5rem;
+    color: #fff;
+}
+
+
+.members-card {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    margin: 1rem;
+}
+
+
+.project-options-btn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.drop-down {
+    /*display: none;*/
+    /*flex eller none*/
+    flex-direction: column;
+    padding: 1rem;
+    gap: 6px;
+    width: 70%;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px #ccc;
+    button
+
+{
+    background-color: #fff;
+    border: none;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 1rem;
+    text-align: center;
+    padding: .5rem;
+    width: 90%;
+}
+
+button:hover {
+    background-color: #F5F7FA;
+}
+
+}
+
+.dropdown-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: .5rem 0;
+}

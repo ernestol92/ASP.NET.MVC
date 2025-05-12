@@ -25,5 +25,13 @@ namespace WebApp.Models
         [Display(Name = "Budget", Prompt = "Enter a Budget")]
         [Required(ErrorMessage = "Please enter a Budget")]
         public int? Budget { get; set; }
+
+        [Display(Name = "Status", Prompt = "Enter a status")]
+        [Required(ErrorMessage = "Please enter a Status")]
+        public int StatusId { get; set; }
+
+        [Display(Name = "Member", Prompt = "Select a member")]
+        [Required(ErrorMessage = "Please select a Member")]
+        public int MemberId { get; set; }
     }
 }

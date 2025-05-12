@@ -60,6 +60,24 @@
             <span asp-validation-for="EditProject.Budget"></span>
         </div>
 
+        <div class="inputGroup select-input">
+            <label asp-for="EditProject.StatusId"></label>
+
+            <select asp-for="EditProject.StatusId">
+                <option value="">-- select a status --</option>
+            </select>
+
+            <span asp-validation-for="EditProject.StatusId"></span>
+        </div>
+
+        <div class="inputGroup select-input">
+            <label asp-for="EditProject.MemberId"></label>
+            <select asp-for="EditProject.MemberId">
+                <option value="">-- select a team member --</option>
+            </select>
+            <span asp-validation-for="EditProject.MemberId"></span>
+        </div>
+
         <button id="btn-change-project" class="btn-style" type="submit">Change</button>
 
 

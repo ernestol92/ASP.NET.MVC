@@ -83,7 +83,9 @@
 
 
 @section Scripts {
-	<partial name="_ValidationScriptsPartial" />
+	<script src="~/js/dropdown-modal-handler.js" asp-append-version="true"></script>
+	<script src="~/js/formvalidation.js" asp-append-version="true"></script>
+	<script src="~/js/quill-integration.js" asp-append-version="true"></script>
 	@if (Model.ShowAddModal)
 	{
 		<script>

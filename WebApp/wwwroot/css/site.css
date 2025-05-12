@@ -120,8 +120,6 @@ h6 {
     font-size: 15px;
 }
 
-.input 
-
 /*media-query*/
 
 @media (max-width: var(--size-desktop)) {

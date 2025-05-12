@@ -1,22 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApp.Models.AuthModels;
 
 namespace WebApp.Controllers
 {
     public class AuthController : Controller
     {
+        [HttpGet]
         public IActionResult SignUp()
         {
-            return View();
+            var signUpModel = new SignUpModel();
+            return View(signUpModel);
         }
 
+        [HttpPost]
+        
+        public IActionResult SignUp(SignUpModel model) {
+        
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
+                return View(model);
+        }
+        [HttpGet]
         public IActionResult SignIn()
         {
-            return View();
+            var signInModel = new SignInModel();
+            return View(signInModel);
         }
 
-        public new IActionResult SignOut()
+        [HttpPost]
+        public IActionResult SignIn(SignInModel model)
         {
-            return RedirectToAction("Index", "Home");
+            if (!ModelState.IsValid) 
+            {
+                return View(model);
+            }
+
+            return View(model);
         }
     }
 }
