@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApp.Models;
+using WebApp.Models.WorkSpaceModels;
 
 namespace WebApp.Controllers
 {

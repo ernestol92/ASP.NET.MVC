@@ -1,0 +1,58 @@
+﻿@model MembersViewModel
+
+<div class="modal-content js-edit-modal">
+    <button class="close">&times;</button>
+    <h3 class="h3-start">Edit Member</h3>
+
+    <img class="profile-img" src="~/Images/avatar.webp" alt="Alternate Text" />
+
+    <form method="post" asp-controller="Members" asp-action="teammembers" id="add-form">
+        <div class="inputGroup">
+            <label asp-for="EditMember.FirstName"></label>
+            <input asp-for="EditMember.FirstName">
+            <span asp-validation-for="EditMember.FirstName"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="EditMember.LastName"></label>
+            <input asp-for="EditMember.LastName">
+            <span asp-validation-for="EditMember.LastName"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="EditMember.Email"></label>
+            <input asp-for="EditMember.Email">
+            <span asp-validation-for="EditMember.Email"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="EditMember.PhoneNumber"></label>
+            <input asp-for="EditMember.PhoneNumber">
+            <span asp-validation-for="EditMember.PhoneNumber"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="EditMember.Role"></label>
+            <input asp-for="EditMember.Role">
+            <span asp-validation-for="EditMember.Role"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="EditMember.Address"></label>
+            <input asp-for="EditMember.Address">
+            <span asp-validation-for="EditMember.Address"></span>
+        </div>
+
+        <div class="Date-Birth-Container">
+            <label asp-for="EditMember.DateOfBirth"></label>
+            <div class="birth-date-selects">
+                <select></select>
+                <select></select>
+                <select></select>
+            </div>
+        </div>
+
+        <button id="btn-create-project" class="btn-style" type="submit">Add Contact</button>
+
+    </form>
+</div>

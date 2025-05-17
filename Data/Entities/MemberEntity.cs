@@ -9,12 +9,15 @@ namespace Data.Entities
         public int Id { get; set; }
 
         [Required]
+        [MaxLength(100)]
         public string FirstName { get; set; } = null!;
 
         [Required]
+        [MaxLength(100)]
         public string LastName { get; set; } = null!;
 
         [Required]
+        [MaxLength(150)]
         public string Email { get; set; } = null!;
 
         [Required]
@@ -24,6 +27,7 @@ namespace Data.Entities
         public string Role { get; set; } = null!;
 
         [Required]
+        [MaxLength(150)]
         public string Address { get; set; } = null!;
 
         [Required]

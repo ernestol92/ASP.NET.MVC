@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApp.Models
+namespace WebApp.Models.WorkSpaceModels
 {
     public abstract class ProjectBaseModel
     {

@@ -1,6 +1,17 @@
-﻿@{
+﻿@model MembersViewModel
+
+@{
 	Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
+
+@section Modals {
+	<div>
+		@await Html.PartialAsync("~/Views/Shared/Partials/MembersPartials/ModalAddMember.cshtml", Model)
+		@await Html.PartialAsync("~/Views/Shared/Partials/MembersPartials/ModalEditMember.cshtml", Model)
+	</div>
+}
+
+
 
 <div class="grid">
 	<div class="header">
@@ -8,13 +19,123 @@
 		<button class="add-member">+ Add Member</button>
 	</div>
 
-	<div class="members-card">
+	<div class="member-cards-container">
 
-		<div>
+		<div class="member-card">
+			<button class="members-options-btn"><i class="fas fa-ellipsis"></i></button>
+			<img class="profile-img" src="~/Images/avatar.webp" alt="Alternate Text" />
+			<h4> Johannes Ljuba </h4>
+			<p class="role-badge" > Chief Executive Officer </p>
+			<p> Johannes@domain.com </p>
+			<p> +46 070 123 45 67</p>
+			<button class="message-btn"> Message </button>
 
+			<div class="drop-down hidden">
+				<button class="js-edit-member-btn"><i class="fa-solid fa-pen" style="color: #74C0FC;"></i> Edit </button>
+				<hr class="dropdown-divider" />
+				<button><i class="fa-solid fa-trash" style="color: #fe4343;"></i>Delete Member</button>
+			</div>
 		</div>
+
+		
 
 	</div>
 	
 
 </div>
+
+<script>
+
+		document.addEventListener("DOMContentLoaded", () => {
+			const dropdownButtons = document.querySelectorAll(".members-options-btn");
+			const modalBackground = document.querySelector(".modal");
+
+			const addMemberBtn = document.querySelector(".add-member");
+			const modalAddMember = document.querySelector(".js-add-modal");
+			const modalAddCloseBtn = document.querySelector(".close");
+
+			const editMemberBtn = document.querySelector(".js-edit-member-btn");
+			const modalEditMember = document.querySelector(".js-edit-modal")
+			const modalEditCloseBtn = document.querySelector(".close")
+			
+			dropdownButtons.forEach(button => {
+				button.addEventListener("click", (e) => {
+					e.stopPropagation();
+					const dropdown = button.parentElement.querySelector(".drop-down");
+					document.querySelectorAll(".drop-down").forEach(d => {
+						if (d !== dropdown) d.classList.add("hidden");
+					});
+
+					dropdown.classList.toggle("hidden");
+				});
+			});
+
+			// Hide dropdown if clicking outside
+			document.addEventListener("click", () => {
+				document.querySelectorAll(".drop-down").forEach(d => d.classList.add("hidden"));
+			});
+
+			//add modal when pressing add addMemberBtn.
+			addMemberBtn?.addEventListener("click", (e)=> {
+				e.stopPropagation();
+				modalBackground.classList.add("modal-background-flex");
+				modalAddMember.classList.add("modal-add-display");
+			})
+			modalAddCloseBtn?.addEventListener("click", (e) => {
+				e.stopPropagation();
+				modalBackground.classList.remove("modal-background-flex");
+				modalAddMember.classList.remove("modal-add-display");
+			});
+
+			//Edit Member modal
+			editMemberBtn.addEventListener("click", (e) =>{
+				e.stopPropagation();
+				modalBackground.classList.add("modal-background-flex");
+				modalEditMember.classList.add("modal-add-display");
+			})
+			modalEditCloseBtn.addEventListener("click", (e)=>{
+				e.stopPropagation();
+				modalBackground.classList.remove("modal-background-flex");
+				modalEditMember.classList.remove("modal-add-display");
+			})
+
+			document.addEventListener("click", (e) => {
+				if (!modalAddMember.contains(e.target) && !modalEditMember.contains(e.target))
+				{
+				modalBackground.classList.remove("modal-background-flex");
+				modalAddMember.classList.remove("modal-add-display");
+				modalEditMember.classList.remove("modal-add-display");
+				
+				}
+			});
+
+			/*  && !modalEditProject.contains(e.target) */
+			// modalEditProject.classList.remove("modal-edit-display");
+	});
+
+
+
+
+</script>
+
+@section Scripts {
+	
+	@if (Model.ShowAddModal)
+	{
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				document.querySelector(".modal").classList.add("modal-background-flex");
+				document.querySelector(".js-add-modal").classList.add("modal-add-display");
+			});
+		</script>
+	}
+	@if (Model.ShowEditModal)
+	{
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				document.querySelector(".modal").classList.add("modal-background-flex");
+				document.querySelector(".js-edit-modal").classList.add("modal-edit-display");
+			});
+		</script>
+	}
+}

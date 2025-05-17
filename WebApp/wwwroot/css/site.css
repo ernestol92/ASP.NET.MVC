@@ -120,6 +120,12 @@ h6 {
     font-size: 15px;
 }
 
+.profile-img {
+    width: 150px;
+    height: auto;
+    padding: 1rem;
+}
+
 /*media-query*/
 
 @media (max-width: var(--size-desktop)) {

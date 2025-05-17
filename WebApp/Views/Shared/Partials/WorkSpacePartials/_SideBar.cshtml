@@ -1,21 +1,23 @@
 ﻿
 <div class="SidebarStyle">
-    <a class="logo-name" href="#">
-        <img src="~/Images/Logo.svg" alt="Alpha logo" />
-        <span>alpha</span>
-    </a>
+        <a class="logo-name" href="#">
+            <img src="~/Images/Logo.svg" alt="Alpha logo" />
+            <span>alpha</span>
+        </a>
 
 
     <ul class="sidebar-list">
-        
-        <a class="sidebar-links" href="#">
-            <i class="fa-solid fa-suitcase" style="color: #2D99FF;"></i>
-            <span> Projects </span>
-        </a>
-
-        <a class="sidebar-links" href="#">
-            <i class="fa-regular fa-users" style="color: #2D99FF;"></i>
-            <span> Members </span>
-        </a>
+        <li class="sidebar-links">
+            <a  asp-controller="Home" asp-action="WorkSpace">
+                <i class="fa-solid fa-suitcase" style="color: #2D99FF;"></i>
+                <span> Projects </span>
+            </a>
+        </li>
+        <li class="sidebar-links">
+            <a asp-controller="Members" asp-action="TeamMembers">
+                <i class="fa-solid fa-users" style="color: #2D99FF;"></i>
+                <span> Members </span>
+            </a>
+        </li>
     </ul>
 </div>

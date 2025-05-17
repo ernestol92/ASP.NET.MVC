@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApp.Models.MembersModels;
 
 namespace WebApp.Controllers
 {
@@ -6,7 +7,21 @@ namespace WebApp.Controllers
     {
         public IActionResult TeamMembers()
         {
-            return View();
+            var membersViewModel = new MembersViewModel();
+            return View(membersViewModel);
+        }
+
+
+        [HttpPost]
+        public IActionResult TeamMembers(MembersViewModel formData) 
+        {
+            if (!ModelState.IsValid) 
+            {
+                formData.ShowAddModal = true;
+                return View(formData);
+            }
+
+            return View(formData);
         }
     }
 }

@@ -22,7 +22,7 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=WorkSpace}/{id?}")
+    pattern: "{controller=Members}/{action=teammembers}/{id?}")
     .WithStaticAssets();
 
 app.Run();

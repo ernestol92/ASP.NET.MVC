@@ -36,12 +36,12 @@
     padding: 1rem;
     border: none;
     border-radius: 14px;
-    align-items: center;
-    gap: .5rem;
-    text-decoration: none;
     font-weight: var(--font-semibold);
     color: black;
-     
+    a
+{
+    text-decoration: none;
+}
 }
 
     .sidebar-links:hover {

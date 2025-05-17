@@ -13,11 +13,11 @@
     padding: 20px;
     border-radius: 14px;
     min-width: 400px;
-    width: 20%;
-    height: 90%;
-    overflow: auto;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: scroll;
     text-align: center;
-    
 }
 
 .modal-edit-display{

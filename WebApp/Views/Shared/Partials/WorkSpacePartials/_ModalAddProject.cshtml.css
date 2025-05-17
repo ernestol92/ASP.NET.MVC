@@ -7,16 +7,17 @@
 /* Modal content box */
 .modal-content {
     display: none;
-    /*either display as block or none*/
     position: relative;
     background: white;
     padding: 20px;
     border-radius: 14px;
+    width: 90%;
     min-width: 400px;
-    width: 20%;
-    height: 90%;
-    overflow: auto;
+    max-width:500px;
+    max-height: 90vh;
     text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 

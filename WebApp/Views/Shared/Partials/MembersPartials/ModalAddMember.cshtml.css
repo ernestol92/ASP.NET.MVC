@@ -1,0 +1,84 @@
+﻿.modal-content {
+    display: none;
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    width: 90%;
+    min-width: 400px;
+    max-width: 500px;
+    max-height: 90vh;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-add-display {
+    display: block;
+}
+
+.h3-start{
+    text-align:start;
+}
+
+.close {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #333;
+    border: none;
+    background-color: transparent;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .6rem;
+    margin-bottom: 1rem;
+    input{
+    padding: 1rem;
+    border-radius: 14px;
+    border: solid 1px #ccc;
+    width: 100%;
+    }
+}
+
+.inputGroup {
+    label
+    {
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+.Date-Birth-Container{
+    text-align:start;
+    margin-bottom:2rem;
+}
+.birth-date-selects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    select
+{
+    padding: 1rem;
+    border-radius: 14px;
+    border: solid 1px #ccc;
+    width: 30%;
+    
+}
+}
+
+
+.btn-style {
+    border-radius: 14px;
+    padding: 1rem;
+    width: 100%;
+    border: solid 1px #ccc;
+    background-color: #2D99FF;
+    color: white;
+}

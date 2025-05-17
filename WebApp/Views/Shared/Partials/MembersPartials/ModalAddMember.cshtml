@@ -1,0 +1,58 @@
+﻿@model MembersViewModel
+
+<div class="modal-content js-add-modal">
+    <button class="close">&times;</button>
+    <h3 class="h3-start">Add Member</h3>
+
+    <img class="profile-img" src="~/Images/avatar.webp" alt="Alternate Text" />
+
+    <form method="post" asp-controller="Members" asp-action="teammembers" id="add-form">
+        <div class="inputGroup">
+            <label asp-for="AddMember.FirstName"></label>
+            <input asp-for="AddMember.FirstName">
+            <span asp-validation-for="AddMember.FirstName"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="AddMember.LastName"></label>
+            <input asp-for="AddMember.LastName">
+            <span asp-validation-for="AddMember.LastName"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="AddMember.Email"></label>
+            <input asp-for="AddMember.Email">
+            <span asp-validation-for="AddMember.Email"></span>
+        </div>
+        
+        <div class="inputGroup">
+            <label asp-for="AddMember.PhoneNumber"></label>
+            <input asp-for="AddMember.PhoneNumber">
+            <span asp-validation-for="AddMember.PhoneNumber"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="AddMember.Role"></label>
+            <input asp-for="AddMember.Role">
+            <span asp-validation-for="AddMember.Role"></span>
+        </div>
+
+        <div class="inputGroup">
+            <label asp-for="AddMember.Address"></label>
+            <input asp-for="AddMember.Address">
+            <span asp-validation-for="AddMember.Address"></span>
+        </div>
+
+        <div class="Date-Birth-Container">
+            <label asp-for="AddMember.DateOfBirth"></label>
+            <div class="birth-date-selects">
+                <select></select>
+                <select></select>
+                <select></select>
+            </div>
+        </div>
+
+        <button id="btn-create-project" class="btn-style" type="submit">Add Contact</button>
+
+    </form>
+</div>
