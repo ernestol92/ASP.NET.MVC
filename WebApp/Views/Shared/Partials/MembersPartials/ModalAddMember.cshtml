@@ -6,7 +6,9 @@
 
     <img class="profile-img" src="~/Images/avatar.webp" alt="Alternate Text" />
 
-    <form method="post" asp-controller="Members" asp-action="teammembers" id="add-form">
+    <form method="post" asp-controller="Members" asp-action="AddTeamMember" id="add-form">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="inputGroup">
             <label asp-for="AddMember.FirstName"></label>
             <input asp-for="AddMember.FirstName">
@@ -24,7 +26,7 @@
             <input asp-for="AddMember.Email">
             <span asp-validation-for="AddMember.Email"></span>
         </div>
-        
+
         <div class="inputGroup">
             <label asp-for="AddMember.PhoneNumber"></label>
             <input asp-for="AddMember.PhoneNumber">
@@ -46,9 +48,27 @@
         <div class="Date-Birth-Container">
             <label asp-for="AddMember.DateOfBirth"></label>
             <div class="birth-date-selects">
-                <select></select>
-                <select></select>
-                <select></select>
+                <select name="BirthYear">
+                    <option value="">Year</option>
+                    @for (int y = DateTime.Now.Year; y >= 1900; y--)
+                    {
+                        <option value="@y">@y</option>
+                    }
+                </select>
+                <select name="BirthMonth">
+                    <option value="">Month</option>
+                    @for (int m = 1; m <= 12; m++) 
+                    {
+                        <option value="@m">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(m)</option>
+                    }
+                </select>
+                <select name="BirthDay">
+                    <option value="">Day</option>
+                    @for (int d = 1; d<=31; d++)
+                        {
+                            <option value="@d">@d</option>
+                        }
+                </select>
             </div>
         </div>
 

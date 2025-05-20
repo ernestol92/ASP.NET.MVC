@@ -6,7 +6,11 @@
 
     <img class="profile-img" src="~/Images/avatar.webp" alt="Alternate Text" />
 
-    <form method="post" asp-controller="Members" asp-action="teammembers" id="add-form">
+    <form method="post" asp-controller="Members" asp-action="EditTeamMember" id="add-form">
+
+        <input asp-for="EditMember.Id" type="hidden" />
+
+
         <div class="inputGroup">
             <label asp-for="EditMember.FirstName"></label>
             <input asp-for="EditMember.FirstName">
@@ -46,9 +50,27 @@
         <div class="Date-Birth-Container">
             <label asp-for="EditMember.DateOfBirth"></label>
             <div class="birth-date-selects">
-                <select></select>
-                <select></select>
-                <select></select>
+                <select name="BirthYear">
+                    <option>Year</option>
+                    @for (int y = DateTime.Now.Year; y >= 1900; y--)
+                    {
+                        <option value="@y">@y</option>
+                    }
+                </select>
+                <select name="BirthMonth">
+                    <option>Month</option>
+                    @for (int m = 1; m<=12; m++)
+                    {
+                        <option value="@m">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(m)</option>
+                    }
+                </select>
+                <select name="BirthDay">
+                    <option>Day</option>
+                    @for(int d = 1; d<=31; d++)
+                    {
+                        <option value="@d">@d</option>
+                    }
+                </select>
             </div>
         </div>
 

@@ -21,27 +21,29 @@
 
 	<div class="member-cards-container">
 
+	@foreach (var member in Model.Members)
+	{
 		<div class="member-card">
 			<button class="members-options-btn"><i class="fas fa-ellipsis"></i></button>
 			<img class="profile-img" src="~/Images/avatar.webp" alt="Alternate Text" />
-			<h4> Johannes Ljuba </h4>
-			<p class="role-badge" > Chief Executive Officer </p>
-			<p> Johannes@domain.com </p>
-			<p> +46 070 123 45 67</p>
+			<h4> @member.FirstName @member.LastName </h4>
+			<p class="role-badge">@member.Role</p>
+			<p>@member.Email</p>
+			<p>@member.PhoneNumber</p>
 			<button class="message-btn"> Message </button>
 
 			<div class="drop-down hidden">
-				<button class="js-edit-member-btn"><i class="fa-solid fa-pen" style="color: #74C0FC;"></i> Edit </button>
+				<button class="js-edit-member-btn" data-id="@member.Id" ><i class="fa-solid fa-pen" style="color: #74C0FC;"></i> Edit </button>
 				<hr class="dropdown-divider" />
-				<button><i class="fa-solid fa-trash" style="color: #fe4343;"></i>Delete Member</button>
+				<form method="post" asp-action="DeleteTeamMember" asp-controller="Members" >
+					<input type="hidden" name="id" value="@member.Id"/>
+					<button type="submit"><i class="fa-solid fa-trash" style="color: #fe4343;"></i>Delete Member</button>
+				</form>
 			</div>
 		</div>
-
-		
-
-	</div>
+	}
 	
-
+	</div>
 </div>
 
 <script>
@@ -54,7 +56,7 @@
 			const modalAddMember = document.querySelector(".js-add-modal");
 			const modalAddCloseBtn = document.querySelector(".close");
 
-			const editMemberBtn = document.querySelector(".js-edit-member-btn");
+			const editMemberBtn = document.querySelectorAll(".js-edit-member-btn");
 			const modalEditMember = document.querySelector(".js-edit-modal")
 			const modalEditCloseBtn = document.querySelector(".close")
 			
@@ -88,11 +90,29 @@
 			});
 
 			//Edit Member modal
-			editMemberBtn.addEventListener("click", (e) =>{
+
+			editMemberBtn.forEach(button => {
+				button.addEventListener("click", (e) => {
 				e.stopPropagation();
-				modalBackground.classList.add("modal-background-flex");
+
+				const memberId = button.getAttribute("data-id");
+				const hiddenIdInput = document.querySelector("input[name='EditMember.Id']");
+
+				if(hiddenIdInput)
+				{
+					hiddenIdInput.value = memberId;
+				}
+
+				modalBackground.classList.add("modal-background-flex")
 				modalEditMember.classList.add("modal-add-display");
-			})
+				});
+			});
+
+			// editMemberBtn.addEventListener("click", (e) =>{
+			// 	e.stopPropagation();
+			// 	modalBackground.classList.add("modal-background-flex");
+			// 	modalEditMember.classList.add("modal-add-display");
+			// })
 			modalEditCloseBtn.addEventListener("click", (e)=>{
 				e.stopPropagation();
 				modalBackground.classList.remove("modal-background-flex");

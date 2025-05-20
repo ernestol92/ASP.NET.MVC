@@ -62,7 +62,7 @@
         
         <div class="inputGroup select-input">
             <label asp-for="AddProject.StatusId"></label>
-            <select asp-for="AddProject.StatusId"><option value="">-- select a status --</option></select>
+            <select asp-for="AddProject.StatusId" asp-items="Model.StatusOptions" ><option value="">-- select a status --</option></select>
             <span asp-validation-for="AddProject.StatusId"></span>
         </div>
 

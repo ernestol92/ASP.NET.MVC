@@ -63,7 +63,7 @@
         <div class="inputGroup select-input">
             <label asp-for="EditProject.StatusId"></label>
 
-            <select asp-for="EditProject.StatusId">
+            <select asp-for="EditProject.StatusId" asp-items="Model.StatusOptions">
                 <option value="">-- select a status --</option>
             </select>
 

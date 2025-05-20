@@ -5,12 +5,7 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+      
 
         public IActionResult WorkSpace()
         {
@@ -21,10 +16,6 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult WorkSpace(WorkSpaceViewModel formData) 
         {
-            _logger.LogInformation("Form submitted: Project Name: {ProjectName}, Client Name: {ClientName}, Description: {ProjectDescription}",
-                formData.AddProject?.ProjectName,
-                formData.AddProject?.ClientName,
-                formData.AddProject?.ProjectDescription);
 
             ModelState.Remove("EditProject.ProjectName");
             ModelState.Remove("EditProject.ClientName");

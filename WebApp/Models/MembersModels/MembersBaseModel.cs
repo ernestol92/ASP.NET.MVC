@@ -29,8 +29,8 @@ namespace WebApp.Models.MembersModels
         public string Role { get; set; } = null!;
 
 
-        [Display(Name = "Adress", Prompt = "Enter adress")]
-        [Required(ErrorMessage = "Please enter member adress")]
+        [Display(Name = "Address", Prompt = "Enter address")]
+        [Required(ErrorMessage = "Please enter member address")]
         public string Address { get; set; } = null!;
 
 
