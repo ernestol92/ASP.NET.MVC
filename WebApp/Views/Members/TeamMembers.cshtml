@@ -50,6 +50,7 @@
 
 		document.addEventListener("DOMContentLoaded", () => {
 			const dropdownButtons = document.querySelectorAll(".members-options-btn");
+			const dropdowns = document.querySelectorAll(".drop-down");
 			const modalBackground = document.querySelector(".modal");
 
 			const addMemberBtn = document.querySelector(".add-member");
@@ -58,19 +59,29 @@
 
 			const editMemberBtn = document.querySelectorAll(".js-edit-member-btn");
 			const modalEditMember = document.querySelector(".js-edit-modal")
-			const modalEditCloseBtn = document.querySelector(".close")
+			const modalEditCloseBtn = document.querySelectorAll(".close")
 			
 			dropdownButtons.forEach(button => {
 				button.addEventListener("click", (e) => {
 					e.stopPropagation();
 					const dropdown = button.parentElement.querySelector(".drop-down");
-					document.querySelectorAll(".drop-down").forEach(d => {
+					dropdowns.forEach(d => {
 						if (d !== dropdown) d.classList.add("hidden");
+						
 					});
 
 					dropdown.classList.toggle("hidden");
 				});
 			});
+
+			dropdowns.forEach(dropdown => {
+				dropdown.querySelectorAll('button').forEach(btn => {
+						btn.addEventListener('click', () => {
+						dropdown.classList.add('hidden');
+					});
+				});
+			});
+
 
 			// Hide dropdown if clicking outside
 			document.addEventListener("click", () => {
@@ -102,7 +113,7 @@
 				{
 					hiddenIdInput.value = memberId;
 				}
-
+				
 				modalBackground.classList.add("modal-background-flex")
 				modalEditMember.classList.add("modal-add-display");
 				});
@@ -113,11 +124,19 @@
 			// 	modalBackground.classList.add("modal-background-flex");
 			// 	modalEditMember.classList.add("modal-add-display");
 			// })
-			modalEditCloseBtn.addEventListener("click", (e)=>{
-				e.stopPropagation();
-				modalBackground.classList.remove("modal-background-flex");
-				modalEditMember.classList.remove("modal-add-display");
-			})
+			// modalEditCloseBtn.addEventListener("click", (e)=>{
+			// 	e.stopPropagation();
+			// 	modalBackground.classList.remove("modal-background-flex");
+			// 	modalEditMember.classList.remove("modal-add-display");
+			// })
+			modalEditCloseBtn.forEach(btn => {
+				btn.addEventListener("click", (e) => {
+					e.stopPropagation();
+					modalBackground.classList.remove("modal-background-flex");
+					modalEditMember.classList.remove("modal-add-display");
+
+				});
+			});
 
 			document.addEventListener("click", (e) => {
 				if (!modalAddMember.contains(e.target) && !modalEditMember.contains(e.target))
